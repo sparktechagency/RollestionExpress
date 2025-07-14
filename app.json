@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "RollestionExpress",
+    "slug": "RollestionExpress",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/androidicon.png",
+    "scheme": "rollestionexpress",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/androidicon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.RollestionExpress"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/webicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+ "backgroundColor": "#000000",
+    "resizeMode": "contain",
+    "image": "./assets/images/blackscreen.png" 
+        }
+      ]
+    ],
+
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
