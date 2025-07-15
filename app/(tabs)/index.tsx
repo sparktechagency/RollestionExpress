@@ -26,7 +26,7 @@ const alerts = [
 
 export default function Home() {
     return (
-        <ScrollView style={tw`flex-1 bg-[#151515] px-4 pt-6`}>
+        <ScrollView style={tw`flex-1 bg-[#151515] px-4 pt-12`}>
             <StatusBar barStyle={'light-content'} />
             {/* Header */}
             <View style={tw`flex-row items-center mb-5`}>

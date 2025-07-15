@@ -61,7 +61,7 @@ export default function OnboardingScreens(): JSX.Element {
             if (currentIndex < slides.length - 1) {
                 setCurrentIndex(currentIndex + 1);
             } else {
-                router.replace('/(tabs)');
+                router.replace('/(authscreen)/login');
             }
 
             // Then fade in new content
