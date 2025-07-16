@@ -4,6 +4,7 @@ import { Alert, Image, StatusBar, Text, TextInput, TouchableOpacity, View } from
 
 import tw from '@/assets/lib/tailwind'
 import * as ImagePicker from 'expo-image-picker'
+import COLORS from '../constants/color'
 
 const confirmRegistration = () => {
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -68,7 +69,7 @@ const confirmRegistration = () => {
     };
 
     return (
-        <View style={tw`flex-1 bg-[#151515] px-6`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-6`}>
             <StatusBar barStyle="light-content" />
 
             {/* Logo Section */}
@@ -143,7 +144,7 @@ const confirmRegistration = () => {
             {/* Sign Up Button */}
             <TouchableOpacity
                 onPress={() => router.push('/(tabs)')}
-                style={tw`bg-blue-500 h-[56px] flex items-center justify-center rounded-xl mb-8`}
+                style={tw`bg-[${COLORS.primary}] h-[56px] flex items-center justify-center rounded-xl mb-8`}
             >
                 <Text style={tw`text-white text-center text-lg font-semibold`}>Sign Up</Text>
             </TouchableOpacity>
@@ -152,7 +153,7 @@ const confirmRegistration = () => {
             <View style={tw`flex-row justify-center pb-8`}>
                 <Text style={tw`text-gray-400 text-base`}>Already have an account? </Text>
                 <TouchableOpacity onPress={() => router.push('/(authscreen)/login')}>
-                    <Text style={tw`text-blue-400 text-base`}>Sign in</Text>
+                    <Text style={tw`text-[${COLORS.primary}] text-base`}>Sign in</Text>
                 </TouchableOpacity>
             </View>
         </View>

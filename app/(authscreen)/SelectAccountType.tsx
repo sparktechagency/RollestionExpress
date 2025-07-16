@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
+import COLORS from '../constants/color'
 
 const SelectAccountType = () => {
     const [selectedType, setSelectedType] = useState('adult')
@@ -23,9 +24,8 @@ const SelectAccountType = () => {
     }
 
     return (
-        <View style={tw`flex-1 bg-[#151515] px-4`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
             <StatusBar barStyle="light-content" backgroundColor="#000000" />
-
 
             {/* Header */}
             <View style={tw`flex-row items-center justify-between mt-12 mb-8`}>
@@ -49,7 +49,7 @@ const SelectAccountType = () => {
                 {/* Adult Option */}
                 <TouchableOpacity
                     onPress={() => setSelectedType('adult')}
-                    style={tw`border-2 ${selectedType === 'adult' ? 'border-blue-500' : 'border-gray-600'} rounded-xl p-4 mb-4`}
+                    style={tw`border-2 ${selectedType === 'adult' ? `border-[${COLORS.primary}]` : 'border-gray-600'} rounded-xl p-4 mb-4`}
                 >
                     <View style={tw`flex-row items-center`}>
                         {/* Adult Icon */}
@@ -74,7 +74,7 @@ const SelectAccountType = () => {
                 {/* Child Option */}
                 <TouchableOpacity
                     onPress={() => setSelectedType('child')}
-                    style={tw`border-2 ${selectedType === 'child' ? 'border-blue-500' : 'border-gray-600'} rounded-xl p-4 mb-8`}
+                    style={tw`border-2 ${selectedType === 'child' ? `border-[${COLORS.primary}]` : 'border-gray-600'} rounded-xl p-4 mb-8`}
                 >
                     <View style={tw`flex-row items-center`}>
                         {/* Child Icon */}
@@ -113,7 +113,7 @@ const SelectAccountType = () => {
             {/* Continue Button */}
             <TouchableOpacity
                 onPress={handleContinue}
-                style={tw`bg-[#1976D2] py-3 rounded-xl mb-8`}
+                style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8`}
             >
                 <Text style={tw`text-white text-center text-lg font-semibold`}>Continue</Text>
             </TouchableOpacity>

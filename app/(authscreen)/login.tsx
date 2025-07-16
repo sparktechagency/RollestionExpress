@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Image, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
+import COLORS from '../constants/color'
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -11,7 +12,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const router = useRouter();
     return (
-        <View style={tw`flex-1 bg-[#151515] px-6`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-6`}>
             <StatusBar barStyle="light-content" />
 
             {/* Logo Section */}
@@ -65,7 +66,7 @@ const Login = () => {
             </TouchableOpacity>
 
             {/* Sign In Button */}
-            <TouchableOpacity onPress={() => router.push('/(authscreen)/SelectAccountType')} style={tw`bg-blue-500 h-[56px] flex items-center justify-center rounded-xl mb-2`}>
+            <TouchableOpacity onPress={() => router.push('/(authscreen)/SelectAccountType')} style={tw`bg-[${COLORS.primary}] h-[56px] flex items-center justify-center rounded-xl mb-2`}>
                 <Text style={tw`text-white text-center text-lg font-semibold`}>Sign in</Text>
             </TouchableOpacity>
 
@@ -81,7 +82,7 @@ const Login = () => {
             <View style={tw`flex-row justify-center pb-8`}>
                 <Text style={tw`text-gray-400 text-base`}>Don't have an account? </Text>
                 <TouchableOpacity onPress={() => router.push('/(authscreen)/signup')}>
-                    <Text style={tw`text-blue-400 text-base`}>Sign Up</Text>
+                    <Text style={tw`text-[${COLORS.primary}] text-base`}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
         </View>

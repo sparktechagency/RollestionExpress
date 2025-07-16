@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Alert, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
+import COLORS from '../constants/color'
 
 const CreateNewPassword: React.FC = () => {
     const [password, setPassword] = useState<string>('')
@@ -44,7 +45,7 @@ const CreateNewPassword: React.FC = () => {
     const isFormValid = password && confirmPassword && validatePassword(password) && password === confirmPassword
 
     return (
-        <View style={tw`flex-1 bg-[#151515] px-4`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
             <StatusBar barStyle="light-content" backgroundColor="#000000" />
 
             {/* Header */}
@@ -138,7 +139,7 @@ const CreateNewPassword: React.FC = () => {
             {/* Reset Password Button */}
             <TouchableOpacity
                 onPress={handleResetPassword}
-                style={tw`bg-blue-500 py-3 rounded-xl mb-8 ${!isFormValid ? 'opacity-50' : ''
+                style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8 ${!isFormValid ? 'opacity-50' : ''
                     }`}
                 disabled={!isFormValid}
             >

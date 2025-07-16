@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
+import COLORS from '../constants/color'
 
 const ForgetPassword: React.FC = () => {
     const [email, setEmail] = useState<string>('')
@@ -15,7 +16,7 @@ const ForgetPassword: React.FC = () => {
     }
 
     return (
-        <View style={tw`flex-1 bg-[#151515] px-4`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
             <StatusBar barStyle="light-content" backgroundColor="#000000" />
 
             {/* Header */}
@@ -55,7 +56,7 @@ const ForgetPassword: React.FC = () => {
             {/* Continue Button */}
             <TouchableOpacity
                 onPress={handleContinue}
-                style={tw`bg-[#1976D2] py-3 rounded-xl mb-8`}
+                style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8`}
 
             >
                 <Text style={tw`text-white text-center text-lg font-semibold`}>Continue</Text>

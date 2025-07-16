@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 import { Alert, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
+import COLORS from '../constants/color'
 
 const OtpVerifyPage: React.FC = () => {
     const [otp, setOtp] = useState<string[]>(['', '', '', '', '', ''])
@@ -53,7 +54,7 @@ const OtpVerifyPage: React.FC = () => {
     const isOtpComplete = otp.every(digit => digit !== '')
 
     return (
-        <View style={tw`flex-1 bg-[#151515] px-4`}>
+        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
             <StatusBar barStyle="light-content" backgroundColor="#000000" />
 
             {/* Header */}
@@ -82,7 +83,7 @@ const OtpVerifyPage: React.FC = () => {
                             ref={(ref) => {
                                 inputRefs.current[index] = ref;
                             }}
-                            style={tw`w-[55px] h-[64px]  border-2 ${activeIndex === index ? 'border-[#1976D2]' : 'border-gray-600'
+                            style={tw`w-[55px] h-[64px]  border-2 ${activeIndex === index ? `border-[${COLORS.primary}]` : 'border-gray-600'
                                 } rounded-xl text-white text-2xl text-center font-semibold`}
                             value={digit}
                             onChangeText={(value) => handleOtpChange(value, index)}
@@ -107,7 +108,7 @@ const OtpVerifyPage: React.FC = () => {
             {/* Verify Button */}
             <TouchableOpacity
                 onPress={handleVerify}
-                style={tw`bg-blue-500 py-3 rounded-xl mb-8 ${!isOtpComplete ? 'opacity-50' : ''
+                style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8 ${!isOtpComplete ? 'opacity-50' : ''
                     }`}
                 disabled={!isOtpComplete}
             >
