@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Alert, Image, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 import tw from '@/assets/lib/tailwind'
 import * as ImagePicker from 'expo-image-picker'
@@ -70,7 +70,7 @@ const confirmRegistration = () => {
 
     return (
         <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-6`}>
-            <StatusBar barStyle="light-content" />
+
 
             {/* Logo Section */}
             <View style={tw`items-center mt-20 mb-8`}>

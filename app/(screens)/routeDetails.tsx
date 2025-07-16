@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
@@ -94,8 +94,8 @@ const RouteDetails = () => {
     };
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-10`}>
-            <StatusBar barStyle="light-content" />
+        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+
 
             {/* Header */}
             <View style={tw`flex-row items-center p-4`}>

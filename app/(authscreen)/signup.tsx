@@ -1,7 +1,7 @@
 import { eyecloseicon, eyeopenicon, googleicon } from '@/assets/icon/Icon'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Image, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
 
@@ -15,7 +15,7 @@ const signup = () => {
     const router = useRouter();
     return (
         <View style={tw`flex-1 bg-[#151515] px-6`}>
-            <StatusBar barStyle="light-content" />
+
 
             {/* Logo Section */}
             <View style={tw`items-center mt-20 `}>

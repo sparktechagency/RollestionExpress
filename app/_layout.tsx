@@ -1,11 +1,17 @@
+import tw from "@/assets/lib/tailwind";
 import { Stack } from "expo-router";
-import { StatusBar } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function RootLayout() {
+  const { bottom, top } = useSafeAreaInsets()
   return (
-    <>
+    <SafeAreaView style={[tw`flex-1`, {
+      paddingBottom: bottom,
+      paddingTop: top
+    }]} >
 
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar barStyle={'dark-content'} />
       <Stack
         initialRouteName="(splash)/splashscreen"
         screenOptions={{
@@ -17,6 +23,6 @@ export default function RootLayout() {
         <Stack.Screen name="(tabs)/home" />
       </Stack>
 
-    </>
+    </SafeAreaView>
   );
 }

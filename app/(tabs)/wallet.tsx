@@ -2,7 +2,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
 import COLORS from '../constants/color';
@@ -57,8 +57,8 @@ export default function App() {
     });
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-10`}>
-            <StatusBar barStyle="light-content" />
+        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+
 
             {/* Header */}
             <View style={tw`py-3.5 items-center`}>

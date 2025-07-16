@@ -1,7 +1,7 @@
 
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { Image, Modal, SafeAreaView, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, Modal, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
 import COLORS from '../constants/color';
@@ -125,8 +125,8 @@ const PaymentMethod = () => {
     const [isModalVisible, setModalVisible] = useState(false);
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-10`}>
-            <StatusBar barStyle="light-content" />
+        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+
 
             {/* Header */}
             <View style={tw`flex-row items-center p-4`}>

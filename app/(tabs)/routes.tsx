@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
 
@@ -83,8 +83,8 @@ const Routes = () => {
     const filteredRoutes = showActiveOnly ? routeData.filter(r => r.active) : routeData;
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-10`}>
-            <StatusBar barStyle="light-content" />
+        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+
 
             {/* Header */}
             <View style={tw`py-4 items-center`}>

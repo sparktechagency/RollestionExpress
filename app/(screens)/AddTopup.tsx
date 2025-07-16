@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { SafeAreaView, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
 
@@ -70,7 +70,7 @@ const AddTopup = () => {
 
     return (
         <SafeAreaView style={tw`flex-1 bg-[#151515] pt-8`}>
-            <StatusBar barStyle="light-content" />
+
 
             {/* Header */}
             <View style={tw`flex-row items-center p-4`}>

@@ -1,6 +1,6 @@
 import tw from '@/assets/lib/tailwind';
 import React from 'react';
-import { ScrollView, StatusBar, Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 import AlertCard from '../components/ui/AlertCard';
 import BallanceCard from '../components/ui/BallanceCard';
 import Header from '../components/ui/Header';
@@ -29,8 +29,8 @@ const alerts = [
 
 export default function Home() {
     return (
-        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 pt-12 `}>
-            <StatusBar barStyle={'light-content'} />
+        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 `}>
+
 
             <Header />
             {/* Balance Card */}

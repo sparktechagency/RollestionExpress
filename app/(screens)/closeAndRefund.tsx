@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { Modal, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { Modal, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import Svg, { Circle, Path } from 'react-native-svg';
 import tw from 'twrnc';
 // Assuming expo-router is used for navigation
@@ -70,8 +70,8 @@ const CloseAndRefund = () => {
     };
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-10`}>
-            <StatusBar barStyle="light-content" />
+        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+
 
             {/* Header */}
             <View style={tw`flex-row items-center p-4`}>

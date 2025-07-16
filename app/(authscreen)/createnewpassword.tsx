@@ -1,7 +1,7 @@
 import { backicon, eyecloseicon, eyeopenicon } from '@/assets/icon/Icon'
 import { useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Alert, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
 import COLORS from '../constants/color'
@@ -46,7 +46,7 @@ const CreateNewPassword: React.FC = () => {
 
     return (
         <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
-            <StatusBar barStyle="light-content" backgroundColor="#000000" />
+
 
             {/* Header */}
             <View style={tw`flex-row items-center mt-12 mb-16`}>
