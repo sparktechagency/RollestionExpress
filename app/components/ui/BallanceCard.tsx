@@ -1,6 +1,7 @@
 import COLORS from '@/app/constants/color'
 import tw from '@/assets/lib/tailwind'
 import { LinearGradient } from 'expo-linear-gradient'
+import { router } from 'expo-router'
 import React from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 
@@ -18,6 +19,7 @@ const BallanceCard = () => {
 
 
                 <TouchableOpacity
+                    onPress={() => router.push('/(screens)/AddTopup')}
                     activeOpacity={0.8}
                     style={tw`w-[118px] mx-auto border-[#95C0EA] border-2 rounded-xl overflow-hidden`}
                 >
