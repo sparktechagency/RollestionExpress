@@ -10,19 +10,18 @@ export default function RootLayout() {
       paddingBottom: bottom,
       paddingTop: top
     }]} >
-
       <StatusBar barStyle={'dark-content'} />
       <Stack
-        initialRouteName="(splash)/splashscreen"
+        initialRouteName="index"
         screenOptions={{
           headerShown: false,
           animation: 'fade',
         }}
       >
-        <Stack.Screen name="(splash)/splashscreen" />
-        <Stack.Screen name="(tabs)/home" />
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(onboardscreens)/firstonboardScreen" />
+        {/* <Stack.Screen name="(tabs)" /> */}
       </Stack>
-
     </SafeAreaView>
   );
 }

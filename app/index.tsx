@@ -25,16 +25,16 @@ export default function Splashscreen() {
 
         // Redirect to (tabs) after 2.5 seconds
         const timeout = setTimeout(() => {
-            router.replace('/firstonboardScreen');
+            router.replace('/(onboardscreens)/firstonboardScreen');
         }, 2500);
 
-        return () => clearTimeout(timeout); // Clean up
+        return () => clearTimeout(timeout);
     }, []);
 
     return (
         <View style={styles.container}>
             <Animated.Image
-                source={require('../../assets/images/logo.png')}
+                source={require('../assets/images/logo.png')}
                 style={[
                     styles.logo,
                     {

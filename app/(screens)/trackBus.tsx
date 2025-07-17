@@ -1,12 +1,12 @@
 import { router } from 'expo-router';
 import React, { useRef, useState } from 'react';
-import { SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Platform, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
 import COLORS from '../constants/color';
 
-// --- SVG Icon Components --- //
+
 
 const ChevronLeftIcon = ({ style }: { style?: any }) => (
     <Svg width="24" height="24" viewBox="0 0 16 16" style={style}>
@@ -105,7 +105,7 @@ const TrackBus = () => {
             </View>
 
             {/* Map View */}
-            <View style={tw`flex-1 h-[400px] `}>
+            <View style={tw`flex-1 h-[40%] `}>
                 <MapView
 
                     showsUserLocation
@@ -115,8 +115,8 @@ const TrackBus = () => {
                     showsCompass
                     collapsable
                     ref={mapRef}
+                    provider={Platform.OS === 'android' ? 'google' : undefined}
                     style={tw`flex-1`}
-                    provider="google"
                     initialRegion={{
                         latitude: 23.8103,
                         longitude: 90.4125,
