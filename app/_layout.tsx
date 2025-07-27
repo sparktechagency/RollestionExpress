@@ -15,7 +15,7 @@ export default function RootLayout() {
         initialRouteName="index"
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          animation: 'default',
         }}
       >
         <Stack.Screen name="index" />

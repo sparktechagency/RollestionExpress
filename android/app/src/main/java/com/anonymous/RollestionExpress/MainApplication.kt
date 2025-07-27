@@ -1,4 +1,4 @@
-package com.anonymous.RollestionExpress
+package com.anonymous.RX
 
 import android.app.Application
 import android.content.res.Configuration

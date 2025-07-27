@@ -54,7 +54,7 @@ export default function OnboardingScreens(): JSX.Element {
         // Fade out
         Animated.timing(fadeAnim, {
             toValue: 0,
-            duration: 200,
+            duration: 300,
             useNativeDriver: true,
         }).start(() => {
             // After fade out, update content

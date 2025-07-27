@@ -1,4 +1,4 @@
-package com.anonymous.RollestionExpress
+package com.anonymous.RX
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build
