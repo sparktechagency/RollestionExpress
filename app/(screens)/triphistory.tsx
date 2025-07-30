@@ -99,7 +99,7 @@ const TripHistory = () => {
     const filters = ['All Trips', 'This Month', 'Completed', 'Refunded', 'Cancelled'];
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-12`}>
 
 
             {/* Header */}

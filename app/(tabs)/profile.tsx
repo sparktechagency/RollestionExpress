@@ -146,7 +146,7 @@ const Profile = () => {
     ];
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] `}>
+        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-12`}>
 
 
             {/* Header */}

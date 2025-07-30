@@ -29,7 +29,7 @@ const alerts = [
 
 export default function Home() {
     return (
-        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 pt-4`}>
+        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 pt-12`}>
 
 
             <Header />

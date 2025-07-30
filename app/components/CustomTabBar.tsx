@@ -18,28 +18,26 @@ export default function CustomTabBar() {
     const pathname = usePathname();
 
     return (
-        <View style={tw`flex-row bg-[${COLORS.primary}]  py-[18px] justify-around items-center `}>
+        <View style={tw`flex-row bg-[${COLORS.primary}] py-1 justify-around items-center`}>
             {tabs.map((tab) => {
-                const isActive =
-                    pathname === tab.name ||
-                    (tab.name === "/" && pathname === "/");
+                // Simplified this logic for clarity
+                const isActive = pathname === tab.name;
 
                 return (
                     <TouchableOpacity
                         key={tab.name}
                         onPress={() => router.push(tab.name as any)}
-                        style={tw`items-center justify-center`}
+                        // Added `flex-1` here to expand the touchable area
+                        style={tw`flex-1 items-center justify-center p-3 `}
                     >
                         <Feather
                             name={tab.icon as any}
                             size={24}
                             color={isActive ? COLORS.white : COLORS.gray}
                         />
-                        {isActive && (
-                            <Text style={tw`text-xs text-white font-bold mt-1`}>
-                                {tab.label}
-                            </Text>
-                        )}
+                        <Text style={tw`text-xs ${isActive ? 'text-white' : 'text-gray-400 text-[8px]'} font-bold mt-1`}>
+                            {tab.label}
+                        </Text>
                     </TouchableOpacity>
                 );
             })}
