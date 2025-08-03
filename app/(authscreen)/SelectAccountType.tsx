@@ -1,7 +1,7 @@
 import { backicon, childicon, usericon } from '@/assets/icon/Icon'
 import { useNavigation, useRouter } from 'expo-router'
 import React, { useState } from 'react'
-import { Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { SvgXml } from 'react-native-svg'
 import tw from 'twrnc'
 import COLORS from '../constants/color'
@@ -24,7 +24,7 @@ const SelectAccountType = () => {
     }
 
     return (
-        <View style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
+        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4`}>
 
 
             {/* Header */}
@@ -108,16 +108,16 @@ const SelectAccountType = () => {
                         keyboardType="numeric"
                     />
                 </View>
+                {/* Continue Button */}
+                <TouchableOpacity
+                    onPress={handleContinue}
+                    style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8`}
+                >
+                    <Text style={tw`text-white text-center text-lg font-semibold`}>Continue</Text>
+                </TouchableOpacity>
             </View>
 
-            {/* Continue Button */}
-            <TouchableOpacity
-                onPress={handleContinue}
-                style={tw`bg-[${COLORS.primary}] py-3 rounded-xl mb-8`}
-            >
-                <Text style={tw`text-white text-center text-lg font-semibold`}>Continue</Text>
-            </TouchableOpacity>
-        </View>
+        </ScrollView>
     )
 }
 

@@ -9,7 +9,7 @@ const tabs = [
     { name: "/", label: "Home", icon: "home" },
     { name: "/wallet", label: "Wallet", icon: "credit-card" },
     { name: "/routes", label: "Routes", icon: "map" },
-    { name: "/notification", label: "Notification", icon: "bell" },
+    { name: "/notification", label: "Alerts", icon: "bell" },
     { name: "/profile", label: "Profile", icon: "user" },
 ] as const;
 
@@ -28,14 +28,14 @@ export default function CustomTabBar() {
                         key={tab.name}
                         onPress={() => router.push(tab.name as any)}
                         // Added `flex-1` here to expand the touchable area
-                        style={tw`flex-1 items-center justify-center p-3 `}
+                        style={tw`flex-1 items-center justify-center py-2 `}
                     >
                         <Feather
                             name={tab.icon as any}
                             size={24}
                             color={isActive ? COLORS.white : COLORS.gray}
                         />
-                        <Text style={tw`text-xs ${isActive ? 'text-white' : 'text-gray-400 text-[8px]'} font-bold mt-1`}>
+                        <Text style={tw`text-xs  py-[10px] ${isActive ? 'text-white' : 'text-gray-400 text-[8px]'} font-bold mt-1`}>
                             {tab.label}
                         </Text>
                     </TouchableOpacity>

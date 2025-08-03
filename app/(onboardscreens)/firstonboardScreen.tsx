@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 20,
+        marginBottom: 60,
     },
     dotsContainer: {
         flexDirection: 'row',

@@ -70,7 +70,7 @@ const CloseAndRefund = () => {
     };
 
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-12 `}>
+        <SafeAreaView style={tw`flex-1 bg-[#151515] pt-6 `}>
 
 
             {/* Header */}

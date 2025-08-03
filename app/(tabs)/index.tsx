@@ -29,7 +29,7 @@ const alerts = [
 
 export default function Home() {
     return (
-        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 pt-12`}>
+        <ScrollView style={tw`flex-1 bg-[${COLORS.backgroundcolor}] px-4 pt-6`}>
 
 
             <Header />
@@ -40,7 +40,7 @@ export default function Home() {
             <QuickAction />
 
             {/* Recent Alerts */}
-            <Text style={tw`text-white text-lg font-semibold mb-3`}>Recent Alerts</Text>
+            <Text style={tw`text-white text-lg font-semibold mb-3`}>Alerts</Text>
             <View style={tw`gap-3 pb-16`}>
                 {alerts.map((alert, index) => (
                     <AlertCard key={index} alert={

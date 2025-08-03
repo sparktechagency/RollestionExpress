@@ -4,7 +4,6 @@ import { Platform, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import Svg, { Path } from 'react-native-svg';
 import tw from 'twrnc';
-import COLORS from '../constants/color';
 
 
 
@@ -91,9 +90,12 @@ const TrackBus = () => {
             longitudeDelta: 0.04,
         }, 1000);
     };
-
+    let MapView;
+    if (Platform.OS !== "web") {
+        MapView = require("react-native-maps").default;
+    }
     return (
-        <SafeAreaView style={tw`flex-1 bg-[#151515]  pt-12`}>
+        <SafeAreaView style={tw`flex-1 bg-[#151515]  pt-6`}>
 
 
             {/* Header */}
@@ -106,36 +108,38 @@ const TrackBus = () => {
 
             {/* Map View */}
             <View style={tw`flex-1 h-[40%] `}>
-                <MapView
+                {Platform.OS !== 'web' && MapView && (
+                    <MapView
+                        showsUserLocation
+                        followsUserLocation
+                        userInterfaceStyle="dark"
+                        showsMyLocationButton
+                        showsCompass
+                        collapsable
+                        ref={mapRef}
+                        provider={Platform.OS === 'android' ? 'google' : undefined}
+                        style={tw`flex-1`}
+                        initialRegion={{
+                            latitude: 23.8103,
+                            longitude: 90.4125,
+                            latitudeDelta: 0.1,
+                            longitudeDelta: 0.1,
+                        }}
 
-                    showsUserLocation
-                    followsUserLocation
-                    userInterfaceStyle="dark"
-                    showsMyLocationButton
-                    showsCompass
-                    collapsable
-                    ref={mapRef}
-                    provider={Platform.OS === 'android' ? 'google' : undefined}
-                    style={tw`flex-1`}
-                    initialRegion={{
-                        latitude: 23.8103,
-                        longitude: 90.4125,
-                        latitudeDelta: 0.1,
-                        longitudeDelta: 0.1,
-                    }}
-
-                >
-                    <Polyline coordinates={routeCoordinates} strokeColor="#1976D2" strokeWidth={3} />
-                    <Marker coordinate={{ latitude: 23.7461, longitude: 90.3742 }}>
-                        <UserLocationMarkerIcon />
-                    </Marker>
-
-                    {Object.values(buses).map(bus => (
-                        <Marker key={bus.id} coordinate={bus.coords} anchor={{ x: 0.5, y: 0.5 }}>
-                            {selectedBus === bus.id && <BusMarkerIcon />}
+                    >
+                        <Polyline coordinates={routeCoordinates} strokeColor="#1976D2" strokeWidth={3} />
+                        <Marker coordinate={{ latitude: 23.7461, longitude: 90.3742 }}>
+                            <UserLocationMarkerIcon />
                         </Marker>
-                    ))}
-                </MapView>
+
+                        {Object.values(buses).map(bus => (
+                            <Marker key={bus.id} coordinate={bus.coords} anchor={{ x: 0.5, y: 0.5 }}>
+                                {selectedBus === bus.id && <BusMarkerIcon />}
+                            </Marker>
+                        ))}
+                    </MapView>
+                )}
+
             </View>
 
             {/* Bottom Sheet Area */}
@@ -151,9 +155,9 @@ const TrackBus = () => {
                         </View>
                     ))}
                 </ScrollView>
-                <TouchableOpacity style={tw`bg-[${COLORS.primary}] rounded-lg py-2 items-center mb-8`}>
+                {/* <TouchableOpacity style={tw`bg-[${COLORS.primary}] rounded-lg py-2 items-center mb-8`}>
                     <Text style={tw`text-white font-semibold text-base`}>Notify me when bus arrives</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
         </SafeAreaView>
     );
