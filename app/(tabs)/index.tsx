@@ -33,7 +33,6 @@ export default function Home() {
 
 
             <Header />
-            {/* Balance Card */}
             <BallanceCard />
 
             {/* Quick Actions */}
